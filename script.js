@@ -146,5 +146,21 @@ $(function() {
         $(this).removeClass('hover');
     });
 
+    // Hero text scene rotation (no external animation library needed).
+    var $heroScenes = $('#hero .hero-scene');
+    var heroSceneIndex = 0;
+
+    function showHeroScene(index) {
+        $heroScenes.removeClass('is-active');
+        $heroScenes.eq(index).addClass('is-active');
+    }
+
+    if ($heroScenes.length > 1) {
+        window.setInterval(function() {
+            heroSceneIndex = (heroSceneIndex + 1) % $heroScenes.length;
+            showHeroScene(heroSceneIndex);
+        }, 5000);
+    }
+
     scheduleVisualUpdate();
 });
