@@ -61,7 +61,7 @@ p {
 .main_h {
   position: fixed;
   top: 0px;
-  max-height: 70px;
+  max-height: 84px;
   z-index: 999;
   width: 100%;
   padding-top: 17px;
@@ -92,41 +92,52 @@ p {
 }
 
 .logo {
-  width: 50px;
+  flex: 0 0 auto;
   font-size: 25px;
   color: #8f8f8f;
   text-transform: uppercase;
-  float: left;
   display: block;
   margin-top: 0;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 nav {
-  float: right;
-  width: 60%;
+  flex: 1 1 auto;
+  width: auto;
 }
 
 nav ul {
   list-style: none;
   overflow: hidden;
   text-align: right;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
 
 nav ul li {
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 0;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 nav ul a {
   color: #888888;
   text-transform: uppercase;
   font-size: 12px;
+}
+
+.main_h .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .mobile-toggle {
@@ -150,13 +161,77 @@ nav ul a {
   display: block;
 }
 
+@media only screen and (max-width: 980px) {
+  .main_h {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 20px;
+    max-height: 74px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px solid gainsboro;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .main_h .row {
+    display: block;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding-top 0.2s ease;
+    pointer-events: none;
+  }
+
+  .open-nav nav ul {
+    max-height: 420px;
+    opacity: 1;
+    padding-top: 10px;
+    margin-bottom: 22px;
+    pointer-events: auto;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+  }
+
+  .mobile-toggle {
+    display: block;
+    margin-top: 2px;
+  }
+}
+
 @media only screen and (max-width: 766px) {
-  .main_h { padding-top: 25px; }
-  .logo { float: none; }
-  nav { width: 100%; }
-  nav ul { padding-top: 10px; margin-bottom: 22px; float: left; text-align: center; width: 100%; }
-  nav ul li { width: 100%; padding: 7px 0; margin: 0; }
-  .mobile-toggle { display: block; margin-top: 20px; }
+  .main_h {
+    padding-top: 18px;
+    max-height: 72px;
+  }
+
+  .mobile-toggle {
+    right: 18px;
+  }
 }
 
 /* ==========================================================================
@@ -214,6 +289,28 @@ nav ul a {
 @keyframes scroll {
   0% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(20px); }
+}
+
+@media only screen and (max-width: 980px) {
+  .hero {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    min-height: 460px;
+    padding-top: 150px;
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .hero {
+    min-height: 400px;
+    padding-top: 140px;
+    background-position: 58% center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
 }
 
 /* ==========================================================================

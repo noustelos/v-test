@@ -8,6 +8,10 @@ $(function() {
     var $parallaxImages = $('.img-parallax');
     var ticking = false;
 
+    function isMobileNavLayout() {
+        return window.matchMedia('(max-width: 980px)').matches;
+    }
+
     function scheduleVisualUpdate() {
         if (ticking) {
             return;
@@ -29,12 +33,23 @@ $(function() {
 
     // Sticky Header - Because people are too lazy to scroll back up
     function updateStickyHeader() {
+        if (isMobileNavLayout()) {
+            $header.addClass('sticky');
+            return;
+        }
+
         $header.toggleClass('sticky', $window.scrollTop() > 100);
     }
 
     // Mobile Navigation Toggle - The Hamburger Menu Trap
     $('.mobile-toggle').on('click', function() {
         $header.toggleClass('open-nav');
+    });
+
+    $window.on('resize', function() {
+        if (!isMobileNavLayout()) {
+            $header.removeClass('open-nav');
+        }
     });
 
     // Close nav on link click
