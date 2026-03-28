@@ -25,6 +25,11 @@ body {
   to { background-position: 500px 0; }
 }
 
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
 a {
   text-decoration: none;
 }
@@ -71,7 +76,7 @@ p {
 }
 
 .sticky {
-  background-color: rgba(255, 255, 255, 0.93);
+  background-color: rgba(255, 255, 255, 0.78);
   opacity: 1;
   top: 0px;
   border-bottom: 1px solid gainsboro;
@@ -387,3 +392,374 @@ nav ul a {
 
 .dribbble-icon a:before, .dribbble-icon a:after { content: '\f201'; }
 .dribbble-icon a:after { background-image: linear-gradient(#e03a70, #f189b8); }
+
+/* Section 04 CTA Buttons */
+.section-four-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px 0 10px;
+}
+
+.section-four-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  padding: 18px 32px;
+  font-family: "Fira Mono", monospace;
+  font-size: 24px;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  border: 2px solid hsl(353, 81%, 56%);
+  color: hsl(353, 81%, 56%);
+  transition: color 0.2s ease-in-out;
+  overflow: hidden;
+  background: transparent;
+}
+
+.section-four-cta strong {
+  font-weight: 700;
+  margin-right: 0.4em;
+}
+
+.section-four-cta::before {
+  content: "";
+  width: 150%;
+  height: 400%;
+  position: absolute;
+  top: 200%;
+  left: -25%;
+  z-index: 0;
+  background: hsl(354, 91%, 61%);
+  transition: top 0.2s linear;
+  transform: rotate(8deg);
+}
+
+.section-four-cta:hover {
+  color: #ffffff;
+}
+
+.section-four-cta:hover::before {
+  top: -150%;
+}
+
+.section-four-cta strong,
+.section-four-cta {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section 05 Contact */
+.contact-section {
+  margin-bottom: 0;
+}
+
+.contact-form-title {
+  margin-top: 40px;
+  text-align: center;
+  color: #a8a8a8;
+  font-family: 'Merriweather', serif;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
+}
+
+.contact-form {
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto 0;
+  font-family: 'Merriweather', serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-family: 'Merriweather', serif;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 2px rgba(231, 76, 60, 1);
+}
+
+.contact-form #input-submit {
+  color: #ffffff;
+  background: #e74c3c;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.contact-form #input-submit:hover {
+  box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+
+.contact-form textarea {
+  height: 126px;
+}
+
+.contact-form .half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.contact-form .right {
+  width: 50%;
+}
+
+.contact-form .left {
+  margin-right: 2%;
+}
+
+.contact-form.cf:before,
+.contact-form.cf:after,
+.contact-form .cf:before,
+.contact-form .cf:after {
+  content: " ";
+  display: table;
+}
+
+.contact-form.cf:after,
+.contact-form .cf:after {
+  clear: both;
+}
+
+@media (max-width: 480px) {
+  .contact-form .half {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+  }
+}
+
+/* Section 04 Cards */
+.cards-snippet-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+figure.snip1321 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+}
+
+figure.snip1321 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+figure.snip1321 img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+figure.snip1321 figcaption {
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+figure.snip1321 h2,
+figure.snip1321 h4 {
+  margin: 0;
+}
+
+figure.snip1321 h2 {
+  font-weight: 600;
+}
+
+figure.snip1321 h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+figure.snip1321 i {
+  font-size: 32px;
+}
+
+figure.snip1321:after {
+  background-color: #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+figure.snip1321 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+figure.snip1321:hover figcaption,
+figure.snip1321.hover figcaption {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+figure.snip1321:hover:after,
+figure.snip1321.hover:after {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 0.9;
+}
+
+/* Section 03 Gray Scale Cards */
+#demo08 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hover08.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.hover08.column > div {
+  text-align: center;
+}
+
+.hover08 figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+.hover08 figure img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.hover08 figure:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.hover08 span {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+/* Section 02 Shine Cards */
+#demo14 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hover14.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.hover14.column > div {
+  text-align: center;
+}
+
+.hover14 figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hover14 figure::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.hover14 figure img {
+  display: block;
+}
+
+.hover14 figure:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+.hover14 span {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555555;
+}

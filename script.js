@@ -126,5 +126,10 @@ $(function() {
         scheduleVisualUpdate();
     });
 
+    // Demo behavior for the card snippet.
+    $('figure.snip1321').on('mouseleave', function() {
+        $(this).removeClass('hover');
+    });
+
     scheduleVisualUpdate();
 });
